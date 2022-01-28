@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice39-2</title>
+</head>
+
+<body>
+  <script>
+
+    let calcD = (a, b, c) => {
+      return (Math.pow(b,2) - (4 * a * c))
+    } 
+    function getDate(x) {
+      let value = prompt('Введите значение переменной ' + x);
+      return value;
+    }
+    function validationDate(valid) {
+      if (isNaN(+valid) || valid.replace(/\s+/g, '') == '') {
+        alert('Проверьте ваши данные:\n1)Внутри JavaScript число представлено в виде 64-битного формата IEEE-754. Ваше число слишком большое, оно переполнило 64-битное хранилище.\n2)Ваше значение не должно включать буквы и другие символы\n3)Вы забыли ввести данные')
+        return false;
+      }
+      else
+      return true;
+    }
+
+    let a = getDate('a');
+    while (!validationDate(a)) {
+      
+      a = getDate('a');
+    }
+    let b = getDate('b');
+    while (!validationDate(b)) {
+      b = getDate('b');
+    }
+    let c = getDate('c');
+    while (!validationDate(c)) {
+      c = getDate('c');
+    }
+    if(isNaN(calcD(a,b,c)))
+      alert('Внутри JavaScript число представлено в виде 64-битного формата IEEE-754. Ваше число слишком большое, оно переполнило 64-битное хранилище.')
+    else
+       alert('D = ' + calcD(a, b, c));
+  </script>
+</body>
+
+</html>
